@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal R3S</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="menu-lateral">
+
+        <div class="btn-expandir">
+            <i class="bi bi-list" id="btn-exp"></i>
+        </div><!--btn-expandir-->
+
+        <ul>
+            <li class="item-menu ativo">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="txt-link">Início</span>
+                </a>
+            </li>
+            <li class="item-menu" id="projetos">
+                <a href="#" onclick="toggleSubmenu(event, 'projetos')">
+                    <span class="icon"><i class="bi bi-buildings"></i></span>
+                    <span class="txt-link">Projetos <i class="bi bi-caret-down-fill"></i></span>
+                </a>
+                <ul class="submenu">
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('implantacao')">
+                            <span class="icon"><i class="bi bi-tools"></i></span>
+                            <span class="txt-link">Implantação</span>
+                        </a>
+                    </li>
+                    
+                    <li class="item-submenu">
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-wrench-adjustable"></i></span>
+                            <span class="txt-link">Suporte</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="item-menu" id="suprimentos">
+                <a href="#" onclick="toggleSubmenu(event, 'suprimentos')">
+                    <span class="icon"><i class="bi bi-cash-coin"></i></span>
+                    <span class="txt-link">Suprimentos <i class="bi bi-caret-down-fill"></i></span>
+                </a>
+                <ul class="submenu">
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('solicitar-pedido')">
+                            <span class="icon"><i class="bi bi-bag-plus"></i></span>
+                            <span class="txt-link">Solicitar Pedido</span>
+                        </a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('acompanhar-pedido')">
+                            <span class="icon"><i class="bi bi-eye"></i></span>
+                            <span class="txt-link">Acompanhar Pedido</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            
+            <li class="item-menu" id="entregas">
+                <a href="#" onclick="toggleSubmenu(event, 'entregas')">
+                    <span class="icon"><i class="bi bi-truck"></i></span>
+                    <span class="txt-link">Entregas <i class="bi bi-caret-down-fill"></i></span>
+                </a>
+                <!-- Submenu para Entregas -->
+                <ul class="submenu">
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('solicitar-entrega')">
+                            <span class="icon"><i class="bi bi-truck-flatbed"></i></span>
+                            <span class="txt-link">Solicitar Entrega</span>
+                        </a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('acompanhar-entrega')">
+                            <span class="icon"><i class="bi bi-map"></i></span>
+                            <span class="txt-link">Acompanhar Entrega</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="item-menu" id="frota">
+                <a href="#" onclick="toggleSubmenu(event, 'frota')">
+                    <span class="icon"><i class="bi bi-car-front"></i></span>
+                    <span class="txt-link">Frota <i class="bi bi-caret-down-fill"></i></span>
+                </a>
+                <!-- Submenu para Frota -->
+                <ul class="submenu">
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('carro-01')">
+                            <span class="icon"><i class="bi bi-car-front"></i></span>
+                            <span class="txt-link">KWID - FMZ-9043</span>
+                        </a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('carro-02')">
+                            <span class="icon"><i class="bi bi-car-front"></i></span>
+                            <span class="txt-link">KWID - FOV-2495</span>
+                        </a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('carro-03')">
+                            <span class="icon"><i class="bi bi-car-front"></i></span>
+                            <span class="txt-link">KWID - FCX-6121</span>
+                        </a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('carro-04')">
+                            <span class="icon"><i class="bi bi-car-front"></i></span>
+                            <span class="txt-link">KÁ - FRP-6085</span>
+                        </a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('carro-05')">
+                            <span class="icon"><i class="bi bi-car-front"></i></span>
+                            <span class="txt-link">GOL - FDN-7C52</span>
+                        </a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="#" onclick="exibirConteudo('carro-05')">
+                            <span class="icon"><i class="bi bi-car-front"></i></span>
+                            <span class="txt-link">Solicitar Aluguel</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-book"></i></span>
+                    <span class="txt-link">Treinamentos</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-bell"></i></span>
+                    <span class="txt-link">Notificações</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-person-circle"></i></span>
+                    <span class="txt-link">Conta</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#" id="logoutButton">
+                    <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+                    <span class="txt-link">Logout</span>
+                </a>
+            </li>
+        </ul>
+
+    </nav><!--menu-lateral-->
+
+    <script>
+        // Verifica se o usuário está logado
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html'; // Redireciona para a página de login
+        }
+
+        // Função para realizar logout
+        document.getElementById('logoutButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('isLoggedIn'); // Remove a sessão
+            window.location.href = 'login.html'; // Redireciona para a página de login
+        });
+    </script>
+<script src="script.js"></script>
+    <!-- O restante do seu conteúdo HTML do portal -->
+    <header class="top-header">
+        <div class="interface">
+            <div class="logotipo">
+                <img src="Image/logo-R3S-fundo-branco.png" alt="Logotipo">
+            </div>
+            <div class="btn-social">
+                <a href="https://www.linkedin.com" target="_blank">
+                    <button><i class="bi bi-linkedin"></i></button>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <button><i class="bi bi-instagram"></i></button>
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <button><i class="bi bi-youtube"></i></button>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <button><i class="bi bi-facebook"></i></button>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+   
+</body>
+</html>
